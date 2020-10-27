@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2"
+                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <deployment>
+        <!-- This allows you to define additional dependencies, it is the same as using the Dependencies: manifest attribute -->
+        <dependencies>
+            <!-- Import META-INF/services for ServiceLoader impls as well -->
+            <module name="deployment.org.example.demo-server-lib.war" services="import"/>
+        </dependencies>
+        <!-- These add additional classes to the module. In this case it is the same as including the jar in the EAR's lib directory -->
+<!--        <resources>-->
+<!--            <resource-root path="my-library.jar" />-->
+<!--        </resources>-->
+    </deployment>
+    <module name="deployment.org.example.${project.name}.war">
+    </module>
+</jboss-deployment-structure>
